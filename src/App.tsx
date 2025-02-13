@@ -44,7 +44,14 @@ const App = () => {
 
     const handleOnClickKeyword = (newKeyword: Keyword) => {
         setShowSearch(true);
-        setSelectedKeywords((prevValue) => [...prevValue, newKeyword]);
+        setSelectedKeywords((prevValue) => {
+            const selection = [...prevValue, newKeyword];
+            //get only the unique selection
+            const uniqueSelection: Keyword[] = Array.from(
+                new Map(selection.map((item) => [item.value, item])).values(),
+            );
+            return uniqueSelection;
+        });
     };
 
     return (
