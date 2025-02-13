@@ -14,10 +14,18 @@ export interface CommonCardProps {
     location: string;
     languages: string[];
     tools: string[];
+    handleOnClickKeyword: Function;
 }
 
 const CommonCard = (datum: CommonCardProps) => {
     const width = useScreenWidth();
+
+    const handleClick = (value: string) => {
+        datum.handleOnClickKeyword({
+            value: value.toLowerCase(),
+            label: value,
+        });
+    };
     const renderCard = () => {
         return (
             <div key={datum?.id} className="body-container-border">
@@ -64,15 +72,34 @@ const CommonCard = (datum: CommonCardProps) => {
                         <hr className="h-px my-4 bg-dark-grayish-dark-cyan border-0" />
                     )}
                     <div className="keyword-container">
-                        <div className="card-keywords">{datum?.role}</div>
-                        <div className="card-keywords">{datum?.level}</div>
+                        {/* improvement 1: onclick should automatically be added to search bar */}
+                        <div
+                            className="card-keywords"
+                            onClick={() => handleClick(datum?.role)}
+                        >
+                            {datum?.role}
+                        </div>
+                        <div
+                            className="card-keywords"
+                            onClick={() => handleClick(datum?.level)}
+                        >
+                            {datum?.level}
+                        </div>
                         {datum?.tools.map((tool) => (
-                            <div key={tool} className="card-keywords">
+                            <div
+                                key={tool}
+                                className="card-keywords"
+                                onClick={() => handleClick(tool)}
+                            >
                                 {tool}
                             </div>
                         ))}
                         {datum?.languages.map((language) => (
-                            <div key={language} className="card-keywords">
+                            <div
+                                key={language}
+                                className="card-keywords"
+                                onClick={() => handleClick(language)}
+                            >
                                 {language}
                             </div>
                         ))}

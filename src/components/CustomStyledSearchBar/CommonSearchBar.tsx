@@ -13,10 +13,12 @@ const CommonSearchBar = ({
     setSelectedKeywords,
     setData,
     setFinalData,
+    selectedKeywords,
 }: {
     setSelectedKeywords: Function;
     setData: Function;
     setFinalData: Function;
+    selectedKeywords: Keyword[];
 }) => {
     return (
         <CreatableSelect
@@ -30,6 +32,7 @@ const CommonSearchBar = ({
             backspaceRemovesValue={true}
             isMulti
             styles={colourStyles}
+            value={selectedKeywords}
             components={{
                 ClearIndicator,
                 IndicatorSeparator: () => null,
