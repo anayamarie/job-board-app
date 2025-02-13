@@ -78,8 +78,7 @@ body {
     .card-company {
         @apply text-desaturated-dark-cyan
         font-bold
-        pb-2
-        flex-auto;
+        pb-2;
     }
     .card-position {
         @apply text-very-dark-grayish-dark-cyan
