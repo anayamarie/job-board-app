@@ -85,6 +85,7 @@ body {
     }
     .card-position {
         @apply text-very-dark-grayish-dark-cyan
+        hover:text-desaturated-dark-cyan
         font-bold
         pb-2
         flex-auto;
@@ -107,7 +108,8 @@ body {
         justify-center
         hover:cursor-pointer
         hover:text-light-grayish-dark-cyan-tbl
-        hover:bg-very-dark-grayish-dark-cyan;
+        /* improvement 4: updated hover color */
+        hover:bg-desaturated-dark-cyan;
     }
     .card-tag-featured {
         @apply bg-very-dark-grayish-dark-cyan 

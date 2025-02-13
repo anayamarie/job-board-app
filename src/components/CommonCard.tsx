@@ -53,6 +53,7 @@ const CommonCard = (datum: CommonCardProps) => {
                         </div>
                         <div className="flex-auto min-w-0">
                             <div className="card-position">
+                                {/* improvement 3: position label hover */}
                                 {datum?.position}
                             </div>
                         </div>
