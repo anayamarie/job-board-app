@@ -1,4 +1,4 @@
-import Select from "react-select";
+import CreatableSelect from "react-select/creatable";
 import ClearIndicator from "./ClearIndicator";
 import { colourStyles } from "./colourStyles";
 
@@ -9,32 +9,24 @@ export interface Keyword {
     label: string;
 }
 
-const keywords: Keyword[] = [
-    { value: "Frontend", label: "Frontend" },
-    { value: "Junior", label: "Junior" },
-    { value: "CSS", label: "CSS" },
-    { value: "JavaScript", label: "JavaScript" },
-];
-
 const CommonSearchBar = ({
     setSelectedKeywords,
     setData,
+    setFinalData,
 }: {
     setSelectedKeywords: Function;
     setData: Function;
+    setFinalData: Function;
 }) => {
     return (
-        <Select
+        <CreatableSelect
             onChange={(option) => {
                 if (option?.length === 0) {
-                    getAllData(setData);
+                    getAllData(setData, setFinalData);
                 }
                 setSelectedKeywords(option);
             }}
             placeholder="Search..."
-            getOptionLabel={(keyword: Keyword) => keyword.label}
-            getOptionValue={(keyword: Keyword) => keyword.label}
-            options={keywords}
             backspaceRemovesValue={true}
             isMulti
             styles={colourStyles}

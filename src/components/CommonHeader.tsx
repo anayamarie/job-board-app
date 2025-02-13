@@ -3,9 +3,11 @@ import CommonSearchBar from "./CustomStyledSearchBar/CommonSearchBar";
 const CommonHeader = ({
     setSelectedKeywords,
     setData,
+    setFinalData,
 }: {
     setSelectedKeywords: Function;
     setData: Function;
+    setFinalData: Function;
 }) => {
     const width = useScreenWidth();
     return (
@@ -17,6 +19,7 @@ const CommonHeader = ({
             <CommonSearchBar
                 setSelectedKeywords={setSelectedKeywords}
                 setData={setData}
+                setFinalData={setFinalData}
             />
         </nav>
     );
