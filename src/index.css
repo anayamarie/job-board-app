@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Spartan";
+    src: url("/public/font/Spartan-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    font-family: "Spartan";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: hsl(180, 52%, 96%);
+}
+
+@layer components {
+    .header-container {
+        @apply bg-center
+        min-h-[156px] 
+        bg-desaturated-dark-cyan 
+        fixed 
+        w-full 
+        z-20 
+        top-0 
+        start-0;
+    }
+    .header-img-desktop {
+        @apply bg-[url(/public/images/bg-header-desktop.svg)]
+        bg-[1440px_auto];
+    }
+    .header-img-mobile {
+        @apply bg-[url(/public/images/bg-header-mobile.svg)]
+        bg-[375px_auto];
+    }
+    .body-container {
+        @apply mx-auto 
+        md:max-w-[80%]
+        max-w-[90%]
+        md:pt-[200px]
+        pt-[210px];
+    }
+    .body-container-border {
+        @apply w-full 
+        mb-8
+        px-5
+        pt-10
+        pb-5 
+        bg-white 
+        border 
+        border-gray-200 
+        rounded-lg 
+        shadow-lg 
+        md:mb-4
+        md:px-12
+        md:py-8;
+    }
+    .card-content {
+        @apply flex 
+        flex-col
+        md:flex-row;
+    }
+    .card-image {
+        @apply w-[50px] 
+        h-[50px] 
+        rounded-full  
+        absolute
+        left-[38px]
+        mt-[-64px]
+        sm:left-[52px]
+        md:w-[100px] 
+        md:h-[100px]
+        md:mt-[unset]
+        md:left-[unset]
+        md:relative;
+    }
+    .card-company {
+        @apply text-desaturated-dark-cyan
+        font-bold
+        pb-2
+        flex-auto;
+    }
+    .card-position {
+        @apply text-very-dark-grayish-dark-cyan
+        font-bold
+        pb-2
+        flex-auto;
+    }
+    .card-details {
+        @apply text-dark-grayish-dark-cyan
+        mr-2
+        font-medium
+        flex-auto;
+    }
+    .card-keywords {
+        @apply bg-light-grayish-dark-cyan-tbl 
+        text-desaturated-dark-cyan 
+        font-bold
+        me-4 
+        mb-4
+        p-2
+        inline-flex 
+        items-center 
+        justify-center;
+    }
+    .card-tag-featured {
+        @apply bg-very-dark-grayish-dark-cyan 
+        text-white
+        rounded-xl
+        font-bold
+        text-xs
+        me-4 
+        p-1
+        mb-2
+        inline-flex 
+        items-center 
+        justify-center;
+    }
+    .card-tag-new {
+        @apply bg-desaturated-dark-cyan
+        text-white
+        rounded-xl
+        font-bold
+        text-xs
+        mx-4 
+        p-1
+        mb-2
+        inline-flex 
+        items-center 
+        justify-center;
+    }
+    .keyword-container {
+        @apply flex-auto 
+        flex 
+        flex-row 
+        flex-wrap 
+        min-w-0 
+        items-center 
+        md:justify-end;
+    }
+}
