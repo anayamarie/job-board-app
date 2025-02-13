@@ -1,6 +1,7 @@
 import { StylesConfig } from "react-select";
 import { Keyword } from "./CommonSearchBar";
 
+// improvement 5: update styles
 const commonSearchContainerStyle: {} = {
     backgroundColor: "white",
     position: "absolute",
@@ -9,7 +10,7 @@ const commonSearchContainerStyle: {} = {
     left: 0,
     right: 0,
     marginInline: "auto",
-    "@media (max-width: 375px)": {
+    "@media (max-width: 768px)": {
         width: "90%",
     },
 };
@@ -37,6 +38,10 @@ export const colourStyles: StylesConfig<Keyword, true> = {
             backgroundColor: "#eef6f6",
             fontSize: "15px",
             marginRight: "10px",
+            "@media (max-width: 768px)": {
+                marginRight: "15px",
+                marginBottom: "15px",
+            },
         };
     },
     option: (styles) => ({
@@ -61,6 +66,9 @@ export const colourStyles: StylesConfig<Keyword, true> = {
     valueContainer: (styles) => ({
         ...styles,
         padding: "10px 40px",
+        "@media (max-width: 768px)": {
+            padding: "15px 15px 0",
+        },
     }),
     clearIndicator: (styles) => ({
         ...styles,
