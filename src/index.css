@@ -36,6 +36,7 @@ body {
     }
     .body-container {
         @apply mx-auto 
+        hover:cursor-pointer
         md:max-w-[80%]
         max-w-[90%]
         md:pt-[200px]
@@ -54,7 +55,9 @@ body {
         shadow-lg 
         md:mb-4
         md:px-12
-        md:py-8;
+        md:py-8
+        hover:border-l-desaturated-dark-cyan
+        hover:border-l-8;
     }
     .card-content {
         @apply flex 
@@ -101,7 +104,10 @@ body {
         p-2
         inline-flex 
         items-center 
-        justify-center;
+        justify-center
+        hover:cursor-pointer
+        hover:text-light-grayish-dark-cyan-tbl
+        hover:bg-very-dark-grayish-dark-cyan;
     }
     .card-tag-featured {
         @apply bg-very-dark-grayish-dark-cyan 
